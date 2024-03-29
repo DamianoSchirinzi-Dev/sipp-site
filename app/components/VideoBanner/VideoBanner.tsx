@@ -1,9 +1,6 @@
 "use client";
 import styled from "styled-components";
-import Image from "next/image";
-import icon1 from "../../../public/images/icons/TwitterX.png";
-import icon2 from "../../../public/images/icons/Facebook.png";
-import icon3 from "../../../public/images/icons/Instagram.png";
+import { SocialLinks } from "../SocialLinks/SocialLinks";
 
 const VideoContainer = styled.div`
   display: flex;
@@ -52,11 +49,7 @@ const StyledIntroTextSection = styled.div`
   }
 `;
 
-const StyledSocialLinksSection = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-`;
+
 
 export const VideoBanner = () => {
   return (
@@ -73,11 +66,7 @@ export const VideoBanner = () => {
       <StyledIntroTextSection>
         <h1>Sipp</h1>
         <h3>Artisan coffee, the best in Manchester</h3>
-        <StyledSocialLinksSection>
-          <Image src={icon1} alt="twitter Icon"></Image>
-          <Image src={icon2} alt="twitter Icon"></Image>
-          <Image src={icon3} alt="twitter Icon"></Image>
-        </StyledSocialLinksSection>
+        <SocialLinks/>
       </StyledIntroTextSection>
     </VideoContainer>
   );

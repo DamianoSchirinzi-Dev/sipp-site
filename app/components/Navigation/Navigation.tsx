@@ -1,5 +1,6 @@
 "use client";
 import styled from "styled-components";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 interface NavigationProps {
@@ -13,7 +14,8 @@ export const NavbarContainer = styled.div<NavigationProps>`
   top: ${({ isSticky }) => (isSticky ? "0px" : "auto")}; // Adjusted
   width: 100%;
   z-index: 1000; // Ensure this is above the video's z-index if it's not showing
-  box-shadow: ${({ isSticky }) => (isSticky ? "0 2px 4px rgba(0,0,0,0.1)" : "none")};
+  box-shadow: ${({ isSticky }) =>
+    isSticky ? "0 2px 4px rgba(0,0,0,0.1)" : "none"};
 `;
 
 export const NavbarContent = styled.div`
@@ -31,12 +33,37 @@ export const NavbarContent = styled.div`
   }
 `;
 
+const StyledLink = styled.h1`
+  cursor: pointer;
+  text-decoration: none; // Remove the underline from links
+  color: #000; // Black color for the text
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #555; // Dark grey color on hover
+  }
+
+  &:active {
+    color: #888; // Light grey color on active/click
+  }
+`;
+
 export const Navigation = () => {
   const [isSticky, setIsSticky] = useState(false); // Corrected
 
   const handleScroll = () => {
-    const videoBannerHeight = document.querySelector('video')?.offsetHeight || 0; // Example: get your video banner height
+    const videoBannerHeight =
+      document.querySelector("video")?.offsetHeight || 0; // Example: get your video banner height
     setIsSticky(window.scrollY > videoBannerHeight);
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    // Prevent default anchor link behavior
+    const section = document.getElementById(sectionId);
+    if (section) {
+      // Scroll to the section smoothly
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   useEffect(() => {
@@ -50,10 +77,18 @@ export const Navigation = () => {
   return (
     <NavbarContainer isSticky={isSticky}>
       <NavbarContent>
-        <h1>About</h1>
-        <h1>Coffee</h1>
-        <h1>Food</h1>
-        <h1>Find us</h1>
+        <Link href="#about" scroll={false} passHref>
+          <h1 onClick={() => scrollToSection("about")}>About</h1>
+        </Link>
+        <Link href="#coffee" scroll={false} passHref>
+          <h1 onClick={() => scrollToSection("coffee")}>Coffee</h1>
+        </Link>
+        <Link href="#food" scroll={false} passHref>
+          <h1 onClick={() => scrollToSection("food")}>Food</h1>
+        </Link>
+        <Link href="#find-us" scroll={false} passHref>
+          <h1 onClick={() => scrollToSection("find-us")}>Find us</h1>
+        </Link>
       </NavbarContent>
     </NavbarContainer>
   );

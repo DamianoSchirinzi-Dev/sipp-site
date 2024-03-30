@@ -1,5 +1,6 @@
 "use client";
 import styled from "styled-components";
+import {sizes} from "../../helpers/sizes";
 import { SocialLinks } from "../SocialLinks/SocialLinks";
 
 const VideoContainer = styled.div`
@@ -47,7 +48,25 @@ const StyledIntroTextSection = styled.div`
     font-size: 1.5rem;
     font-weight: 200;
   }
-`;
+
+  @media (min-width: ${sizes.tablet}px) {
+    width:30%
+  }
+
+  @media (min-width: ${sizes.large}px) {
+    width:20%
+
+    h1 {
+      font-size: 10rem;
+      font-weight: 200;
+    }
+  
+    h3 {
+      font-size: 2.4rem;
+      font-weight: 200;
+    }
+  }
+`;  
 
 
 

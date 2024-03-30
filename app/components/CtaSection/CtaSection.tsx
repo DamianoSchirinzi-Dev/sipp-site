@@ -21,23 +21,23 @@ const StyledCtaSection = styled.div`
 
   button {
     padding: 0.8rem 1.6rem;
-    border: 1px solid black; // Black outline
-    background: transparent; // No background color
-    color: black; // Black text
-    font-size: 1rem; // Adjust font size as needed
-    font-weight: bold; // Bold font weight
-    cursor: pointer; // Hand cursor on hover
-    transition: all 0.2s ease-in-out; // Smooth transition for hover effects
+    border: 1px solid black; 
+    background: transparent;
+    color: black;
+    font-size: 1rem; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: all 0.2s ease-in-out;
 
     &:hover {
-      background-color: black; // Change background on hover
-      color: white; // Change text color on hover
-      border-color: transparent; // Remove border on hover if desired
+      background-color: #E09F7D;
+      border-color: transparent;
+      border-radius: 5%
     }
 
     &:focus {
-      outline: none; // Remove default focus outline
-      border-color: grey; // Optional: add custom focus styles
+      outline: none; 
+      border-color: grey;
     }
 `;
 

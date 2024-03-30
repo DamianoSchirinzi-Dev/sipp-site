@@ -29,7 +29,7 @@ export default function Home() {
       <CtaSection
         heading="Food"
         subheading="Using specialist dairy, meat and vegetable producers to put together an amazing plate of food. We constantly look for great suppliers who share our passion for flavour."
-        buttonText="Food"
+        buttonText="Menu"
         buttonLink="sdsad"
         sectionId="food"
       />

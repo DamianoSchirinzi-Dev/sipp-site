@@ -10,7 +10,7 @@ const StyledFooter = styled.div`
     text-align: center; 
     padding: 2rem 0rem;
 
-    background-color: #808080;
+    background-color: #E09F7D;
 
     h2 {
         font-size: 1.4rem;

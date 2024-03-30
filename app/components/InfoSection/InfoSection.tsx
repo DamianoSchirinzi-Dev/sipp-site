@@ -2,6 +2,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Cafe from "../../../public/images/icons/Cafe_1.jpg";
+import { sizes } from "../../helpers/sizes";
 
 const StyledInfoSection = styled.div`
   display: flex;
@@ -25,6 +26,22 @@ const StyledInfoSection = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
+  }
+
+  @media (min-width: ${sizes.tablet}px) {
+    padding: 5rem 7rem;
+  }
+
+  @media (min-width: ${sizes.large}px) {
+    padding: 5rem 16rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+    }
   }
 `;
 
